@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends "first_app/index.html"%}
+  {% block body_block%}
+    <form  method="POST">
+      {{form.as_p}}
+
+      <input type="Submit" value="Submit">
+      {% csrf_token %}
+    </form>
+    {% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <link rel="stylesheet" href= "{% static "first_app/new.css" %}"/>
+  </head>
+  <body>
+    <h1>This is List</h1>
+    {% if access_list %}
+    <ol>
+    {%for i in access_list%}
+
+      <li> User info:
+      <ul>
+        <li>First Name : {{i.First_name}}</li>
+        <li>last Name : {{i.Last_name}}</li>
+        <li>Email : {{i.email}}</li>
+      </ul>
+    </li>
+
+    {%endfor%}
+      </ol>
+    {%endif%}
+  </body>
+</html>

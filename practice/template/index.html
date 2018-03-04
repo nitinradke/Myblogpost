@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Nitin
+    {% if values %}
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Surname</th>
+      </thead>
+
+      <tbody>
+        {% for acc in values%}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.last_name}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <h1>THis is random text</h1>
+    {% endif %}
+    {{form}}
+  </body>
+</html>

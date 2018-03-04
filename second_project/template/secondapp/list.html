@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <link rel="stylesheet" href= "{% static "secondapp/new.css" %}"/>
+  </head>
+  <body>
+    <h1> This is data from database</h1>
+    {% if values%}
+    <table>
+      <thead>
+        <th>Site Name</th>
+        <th>Date Accessed</th>
+      </thead>
+      <tbody>
+        {% for acc in values %}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p> There is some internal problems </p>
+    {% endif %}
+  </body>
+    </html>
+
+
+
+
+
+  </body>
+</html>
