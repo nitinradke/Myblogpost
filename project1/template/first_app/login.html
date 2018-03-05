@@ -5,6 +5,11 @@
     <form method="POST" action="{% url 'first_app:login' %}"  >
     {% csrf_token %}
       <p align= "center">
+      {% if required %}
+        <font color = "red">Incorrect username password combination</font><br/>
+
+      {% endif %}
+
       <label for="Username">Username:</label>
        <input type="text" name="username" placeholder="Enter user name">
       <br/>

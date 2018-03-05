@@ -25,6 +25,7 @@ def index(request):
 
 
 def user_login(request):
+    required = False
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -36,8 +37,9 @@ def user_login(request):
             else:
                 return HttpResponse(" Your account is been suspended contact adminstrator")
         else:
-            return HttpResponse("Incorrect username passowrd combination")
-    return render(request,'first_app/login.html',{},RequestContext(request))
+            required=True
+            return render(request,'first_app/login.html',{'required':required},RequestContext(request))
+    return render(request,'first_app/login.html',{'required':required},RequestContext(request))
 
 
 @login_required
