@@ -10,7 +10,9 @@
       <div class="container">
         <ul class="nav navbar-nav">
           <li ><a class = "navbar-link" href="{% url "admin:index" %}">Admin</a></li>
-          <li ><a class = "navbar-link" href="{% url "first_app:formpage" %}">Form</a></li>
+          {% if user.is_authenticated %}
+          <li ><a class = "navbar-link" href="{% url "first_app:logout" %}">Logout</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
