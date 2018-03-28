@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>List</title>
+  </head>
+  <body>
+    <ol>
+
+
+    {% for rec in school_list%}
+      <ol>
+        <li>{{rec.name}}</li>
+        <li>{{rec.age}}</li>
+        <li>{{rec.city}}</li>
+      </ol>
+      <br><br>
+      {% endfor %}
+      </ol>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login Form</title>
+  </head>
+  <body>
+    <form  action="{% url 'first_app:login' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="username"  placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit"  value="Submit">
+    </form>
+  </body>
+</html>
