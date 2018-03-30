@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Student Details</title>
+  </head>
+  <body>
+      <li>{{school.id}}</li>
+      <li>{{school.name}}</li>
+      <li>{{school.principal}}</li>
+      <li>{{school.location}}</li>
+
+    {% for student in school.students.all%}
+      <h3>The {{student.name}} is {{student.age}} years old</h3>
+    {% endfor %}
+
+    <a href="{% url 'first_app:update' pk=school.pk %}">Update</a>
+    <a href="{% url 'first_app:delete' pk=school.pk %}">Delete</a>
+  </body>
+</html>

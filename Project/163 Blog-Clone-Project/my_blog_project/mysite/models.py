@@ -7,9 +7,9 @@ from django.urls import reverse
 class Post(models.Model):
     auther = models.CharField(max_length = 30)
     title = models.CharField(max_length = 100)
-    text = models.TextFeild()
-    created_date = models.DateTimeFeild(default = timezone.now)
-    published_date =  models.DateTimeFeild(blank=True,null=True)
+    text = models.TextField()
+    created_date = models.DateTimeField(default = timezone.now)
+    published_date =  models.DateTimeField(blank=True,null=True)
 
 
     def publish_date(self):
@@ -27,8 +27,8 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete = models.CASCADE,related_name = 'comments')
     auther = models.CharField(max_length=30)
-    text = models.TextFeild()
-    created_date = models.DateTimeFeild(default = timezone.now)
+    text = models.TextField()
+    created_date = models.DateTimeField(default = timezone.now)
     approved_comment = models.BooleanField(default = False)
 
     def approve(self):
